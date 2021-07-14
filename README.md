@@ -1,4 +1,6 @@
-# Font Picker for React
+# Font Picker Functionnal Component for React
+
+This
 
 **A simple, customizable font picker allowing users to preview, select and use Google Fonts on your website.**
 
@@ -7,9 +9,8 @@
 - Automatic font download and generation of the required CSS selectors
 - Efficient font previews (full fonts are only downloaded on selection)
 
-→ **[Demo](https://font-picker.samuelmeuli.com)**
-
-_This is the React component for the [**Font Picker**](https://github.com/samuelmeuli/font-picker) library._
+_This is a functionnal React component for the [**Font Picker**](https://github.com/samuelmeuli/font-picker) library._
+_This is based on the [**Font Picker React class component**](https://github.com/samuelmeuli/font-picker-react) written in TypeScript by [**@samuelmeuli**](https://github.com/samuelmeuli)._
 
 <p align="center">
   <img src=".github/demo.gif" width="700" alt="Font picker demo" />
@@ -32,33 +33,33 @@ npm install font-picker-react
 Add the `FontPicker` component to your React code:
 
 ```jsx
-import React, { Component } from "react";
-import FontPicker from "font-picker-react";
+import React, { Component } from "react"
+import FontPicker from "font-picker-react"
 
 export default class ExampleComponent extends Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			activeFontFamily: "Open Sans",
-		};
-	}
+  constructor(props) {
+    super(props)
+    this.state = {
+      activeFontFamily: "Open Sans",
+    }
+  }
 
-	render() {
-		return (
-			<div>
-				<FontPicker
-					apiKey="YOUR_API_KEY"
-					activeFontFamily={this.state.activeFontFamily}
-					onChange={(nextFont) =>
-						this.setState({
-							activeFontFamily: nextFont.family,
-						})
-					}
-				/>
-				<p className="apply-font">The font will be applied to this text.</p>
-			</div>
-		);
-	}
+  render() {
+    return (
+      <div>
+        <FontPicker
+          apiKey="YOUR_API_KEY"
+          activeFontFamily={this.state.activeFontFamily}
+          onChange={(nextFont) =>
+            this.setState({
+              activeFontFamily: nextFont.family,
+            })
+          }
+        />
+        <p className="apply-font">The font will be applied to this text.</p>
+      </div>
+    )
+  }
 }
 ```
 
